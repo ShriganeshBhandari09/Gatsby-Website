@@ -1,9 +1,3 @@
-import aboutTwo from "../images/about-two.jpg";
-import aboutFive from "../images/about-five.jpg";
-import aboutSix from "../images/about-six.jpg";
-import leaf from "../images/leaf.svg";
-import offers from "../images/offer.svg";
-import star from "../images/star.svg";
 import React from "react"
 import { StaticImage } from "gatsby-plugin-image";
 
@@ -15,7 +9,7 @@ const Delivery = () => {
       <div className="flex flex-col lg:flex-row gap-4 w-full lg:w-1/2">
         <div className="w-full lg:w-1/2 overflow-hidden rounded-2xl">
           <StaticImage
-            src={aboutTwo}
+            src="../images/about-two.jpg"
             alt="Healthy food"
             className="w-full h-full object-cover"
           />
@@ -23,13 +17,13 @@ const Delivery = () => {
         <div className="hidden w-full lg:w-1/2 lg:flex flex-col gap-3">
           <div className="h-96 overflow-hidden rounded-2xl">
             <StaticImage
-              src={aboutFive}
+              src="../images/about-two.jpg"
               alt=""
               className="w-full h-full object-cover"
             />
           </div>
           <div className="h-60 overflow-hidden rounded-2xl">
-            <StaticImage src={aboutSix} alt="" className="w-full h-full object-cover" />
+            <StaticImage src="../images/about-six.jpg" alt="" className="w-full h-full object-cover" />
           </div>
         </div>
       </div>
@@ -52,7 +46,7 @@ const Delivery = () => {
         <div className="flex flex-col gap-3">
           <div className="flex items-center gap-2">
             <div className="bg-[#AD343E] rounded-[50%] w-7 h-7 flex justify-center items-center">
-              <StaticImage src={leaf} alt="" />
+              <StaticImage src="../images/leaf.svg" alt="" />
             </div>
             <p className="font-medium text-xl leading-7 font-DMSans">
               Authentic & Fresh Ingredients
@@ -60,7 +54,7 @@ const Delivery = () => {
           </div>
           <div className="flex items-center gap-2">
             <div className="bg-[#AD343E] rounded-[50%] w-7 h-7 flex justify-center items-center">
-              <StaticImage src={offers} alt="" />
+              <StaticImage src="../images/offer.svg" alt="" />
             </div>
             <p className="font-medium text-xl leading-7 font-DMSans">
               Best Offers & Prices
@@ -68,7 +62,7 @@ const Delivery = () => {
           </div>
           <div className="flex items-center gap-2">
             <div className="bg-[#AD343E] rounded-[50%] w-7 h-7 flex justify-center items-center">
-              <StaticImage src={star} alt="" className="w-6" />
+              <StaticImage src="../images/star.svg" alt="" className="w-6" />
             </div>
             <p className="font-medium text-xl leading-7 font-DMSans">
               Exceptional Service & Ambiance

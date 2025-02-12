@@ -19,7 +19,7 @@ const Navbar = () => {
         <div className="-mt-2">
           <Link to="/">
             <div className="flex gap-3 items-center justify-center">
-              <StaticImage src={logo} alt="" className="w-10 lg:w-12" />
+              <StaticImage src="../images/restaurant.png" alt="" className="w-10 lg:w-12" />
               <div className="text-center pt-[8px] lg:pt-[10px]">
                 <p className="text-2xl lg:text-3xl font-Francois text-black">
                   HOME FEELS
@@ -56,7 +56,7 @@ const Navbar = () => {
           </Link>
           <div className="md:hidden">
             <img
-              src={menu_icon}
+              src="../images/menu_icon.png"
               alt=""
               className="w-[18px] h-[18px] cursor-pointer"
               onClick={handleNavbar}
@@ -71,7 +71,7 @@ const Navbar = () => {
               className="flex items-center cursor-pointer gap-2 px-2 py-2"
               onClick={handleNavbar}
             >
-              <StaticImage src={dropdown_icon} alt="" className="w-3" />
+              <StaticImage src="../images/dropdown_icon.png" alt="" className="w-3" />
               <p className="text-[20px]">Back</p>
             </div>
             <div className="flex flex-col px-0 font-DMSans">

@@ -5,7 +5,7 @@ const MenuCard = ({ category }) => {
   return (
     <div className="border-[1.5px] border-[#DBDFD0] rounded-xl flex items-center flex-col justify-center py-8 gap-6 font-DMSans">
       <div className="w-24 h-24 rounded-[50%] bg-gray-100 flex justify-center items-center">
-        <StaticImage src={category.img} alt="" />
+        <img src={category.img} alt="" />
       </div>
       <div className="flex flex-col justify-center items-center gap-4">
         <h3 className="text-2xl leading-7 tracking-tighter text-center font-bold">

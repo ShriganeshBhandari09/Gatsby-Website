@@ -14,7 +14,7 @@ const Footer = () => {
             <div className="-mt-2">
               <Link to="/">
                 <div className="flex gap-3">
-                  <StaticImage src={logo} alt="" className="w-10 lg:w-12" />
+                  <StaticImage src="../images/restaurant-white.png" alt="" className="w-10 lg:w-12" />
                   <div className="text-center pt-[8px] lg:pt-[10px]">
                     <p className="text-2xl lg:text-3xl font-Francois text-white">
                       HOME FEELS

@@ -14,7 +14,7 @@ const ReviewsCard = ({ review }) => {
       </div>
       <div className="flex items-center pb-8 gap-6 px-8">
         <div className="w-16 rounded-[50%] overflow-hidden">
-          <StaticImage src={review.img} alt="" className="h-full w-full object-cover" />
+          <img src={review.img} alt="" className="h-full w-full object-cover" />
         </div>
         <div>
           <p className="leading-6 text-lg font-semibold text-[#2C2F24]">

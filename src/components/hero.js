@@ -7,7 +7,7 @@ const Hero = () => {
   return (
     <>
       <div className="w-full h-[80vh] overflow-hidden relative">
-        <StaticImage src={hero} alt="Hero" className="w-full h-full object-cover" />
+        <StaticImage src="../images/header_img1.png" alt="Hero" className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-black opacity-40 z-10"></div>
         <div className="absolute top-[50%] left-[50%] z-20 transform -translate-x-1/2 -translate-y-1/2 text-center flex gap-6 flex-col justify-center items-center w-full font-PlayFair lg:max-w-3xl">
           <h1 className="text-white text-4xl font-bold md:text-5xl lg:text-6xl">

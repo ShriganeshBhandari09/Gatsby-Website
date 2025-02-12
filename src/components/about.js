@@ -1,12 +1,11 @@
 import { StaticImage } from "gatsby-plugin-image";
-import heroThree from "../images/hero-three.jpg";
 import React from "react"
 const About = () => {
   return (
     <div className="px-3 sm:px-[5vw] lg:px-[9vw] flex flex-col lg:flex-row gap-10 lg:gap-14 items-center">
       <div className="w-full lg:w-1/2 overflow-hidden rounded-3xl relative">
         <StaticImage
-          src={heroThree}
+          src="../images/hero-three.jpg"
           alt="Healthy food"
           className="w-full h-full object-cover"
         />
