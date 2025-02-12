@@ -5,6 +5,7 @@ import leaf from "../images/leaf.svg";
 import offers from "../images/offer.svg";
 import star from "../images/star.svg";
 import React from "react"
+import { StaticImage } from "gatsby-plugin-image";
 
 
 const Delivery = () => {
@@ -13,7 +14,7 @@ const Delivery = () => {
       {/* Image Section */}
       <div className="flex flex-col lg:flex-row gap-4 w-full lg:w-1/2">
         <div className="w-full lg:w-1/2 overflow-hidden rounded-2xl">
-          <img
+          <StaticImage
             src={aboutTwo}
             alt="Healthy food"
             className="w-full h-full object-cover"
@@ -21,14 +22,14 @@ const Delivery = () => {
         </div>
         <div className="hidden w-full lg:w-1/2 lg:flex flex-col gap-3">
           <div className="h-96 overflow-hidden rounded-2xl">
-            <img
+            <StaticImage
               src={aboutFive}
               alt=""
               className="w-full h-full object-cover"
             />
           </div>
           <div className="h-60 overflow-hidden rounded-2xl">
-            <img src={aboutSix} alt="" className="w-full h-full object-cover" />
+            <StaticImage src={aboutSix} alt="" className="w-full h-full object-cover" />
           </div>
         </div>
       </div>
@@ -51,7 +52,7 @@ const Delivery = () => {
         <div className="flex flex-col gap-3">
           <div className="flex items-center gap-2">
             <div className="bg-[#AD343E] rounded-[50%] w-7 h-7 flex justify-center items-center">
-              <img src={leaf} alt="" />
+              <StaticImage src={leaf} alt="" />
             </div>
             <p className="font-medium text-xl leading-7 font-DMSans">
               Authentic & Fresh Ingredients
@@ -59,7 +60,7 @@ const Delivery = () => {
           </div>
           <div className="flex items-center gap-2">
             <div className="bg-[#AD343E] rounded-[50%] w-7 h-7 flex justify-center items-center">
-              <img src={offers} alt="" />
+              <StaticImage src={offers} alt="" />
             </div>
             <p className="font-medium text-xl leading-7 font-DMSans">
               Best Offers & Prices
@@ -67,7 +68,7 @@ const Delivery = () => {
           </div>
           <div className="flex items-center gap-2">
             <div className="bg-[#AD343E] rounded-[50%] w-7 h-7 flex justify-center items-center">
-              <img src={star} alt="" className="w-6" />
+              <StaticImage src={star} alt="" className="w-6" />
             </div>
             <p className="font-medium text-xl leading-7 font-DMSans">
               Exceptional Service & Ambiance

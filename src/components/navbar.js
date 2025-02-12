@@ -4,6 +4,7 @@ import dropdown_icon from "../images/dropdown_icon.png";
 import logo from "../images/restaurant.png";
 import { Link } from "gatsby";
 import React from "react"
+import { StaticImage } from "gatsby-plugin-image";
 
 
 const Navbar = () => {
@@ -18,7 +19,7 @@ const Navbar = () => {
         <div className="-mt-2">
           <Link to="/">
             <div className="flex gap-3 items-center justify-center">
-              <img src={logo} alt="" className="w-10 lg:w-12" />
+              <StaticImage src={logo} alt="" className="w-10 lg:w-12" />
               <div className="text-center pt-[8px] lg:pt-[10px]">
                 <p className="text-2xl lg:text-3xl font-Francois text-black">
                   HOME FEELS
@@ -70,7 +71,7 @@ const Navbar = () => {
               className="flex items-center cursor-pointer gap-2 px-2 py-2"
               onClick={handleNavbar}
             >
-              <img src={dropdown_icon} alt="" className="w-3" />
+              <StaticImage src={dropdown_icon} alt="" className="w-3" />
               <p className="text-[20px]">Back</p>
             </div>
             <div className="flex flex-col px-0 font-DMSans">
