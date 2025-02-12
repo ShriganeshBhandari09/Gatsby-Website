@@ -6,7 +6,7 @@ const AlumniSection = () => {
     {
       name: "Amit Sharma",
       job: "Software Engineer at Google",
-      image: "https://source.unsplash.com/400x300/?coding,technology",
+      image: "https://picsum.photos/seed/picsum/200/300",
       quote:
         "The hands-on training gave me the confidence to land my dream job at Google!",
     },
@@ -40,9 +40,8 @@ const AlumniSection = () => {
               key={index}
               className="bg-white p-6 rounded-lg shadow-lg text-center"
             >
-              <StaticImage
+              <img
                 src={alumni.image}
-                alt={alumni.name}
                 className="w-24 h-24 mx-auto rounded-full mb-4"
               />
               <h3 className="text-xl font-semibold text-gray-900">

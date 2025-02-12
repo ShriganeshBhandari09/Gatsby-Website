@@ -1,3 +1,4 @@
+import { StaticImage } from "gatsby-plugin-image";
 import React from "react";
 
 const ProgramSection = () => {
@@ -6,23 +7,23 @@ const ProgramSection = () => {
       title: "Full Stack Development",
       description:
         "Master front-end and back-end technologies with hands-on projects.",
-      image: "https://source.unsplash.com/400x300/?coding,technology",
+      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y29kaW5nfGVufDB8fDB8fHww",
     },
     {
       title: "Data Science & AI",
       description: "Learn machine learning, AI, and data analysis techniques.",
-      image: "https://source.unsplash.com/400x300/?data,analytics",
+      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y29kaW5nfGVufDB8fDB8fHww",
     },
     {
       title: "Cybersecurity",
       description:
         "Protect digital assets and learn ethical hacking techniques.",
-      image: "https://source.unsplash.com/400x300/?security,hacking",
+      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y29kaW5nfGVufDB8fDB8fHww",
     },
     {
       title: "Cloud Computing",
       description: "Gain expertise in AWS, Azure, and cloud infrastructure.",
-      image: "https://source.unsplash.com/400x300/?cloud,server",
+      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y29kaW5nfGVufDB8fDB8fHww",
     },
   ];
   return (
