@@ -1,80 +1,32 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "gatsby";
-import heroOne from "../images/banner-one.jpg";
-import heroTwo from "../images/banner-two.webp";
-import heroThree from "../images/banner-three.webp";
-import heroFour from "../images/banner-four.jpg";
-
-const slides = [heroOne, heroTwo, heroThree, heroFour];
+import hero from "../images/header_img1.png";
+// import { FaArrowRight } from "react-icons/fa6";
+import React from "react"
 
 const Hero = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 5000);
-
-    return () => clearInterval(interval);
-  }, []);
-
   return (
-    <div className="relative w-full h-[85vh] overflow-hidden mt-[60px] bg-black bg-opacity-80">
-      {/* Slides */}
-      {slides.map((slide, index) => (
-        <div
-          key={index}
-          className={`absolute top-0 left-0 w-full h-full bg-cover bg-center transition-opacity duration-1000 ${
-            index === currentSlide ? "opacity-100" : "opacity-0"
-          }`}
-          style={{ backgroundImage: `url(${slide})` }}
-        ></div>
-      ))}
-
-      {/* Overlay */}
-      <div className="absolute inset-0 flex flex-col justify-center items-start text-white px-6 md:px-12 z-10 w-full h-full bg-black opacity-50"></div>
-      <div className="absolute inset-0 flex flex-col justify-center items-start text-white px-6 md:px-12 z-10 w-full h-full">
-        <h1 className="text-3xl md:text-6xl font-bold leading-tight">
-          Learn <br />
-          <span className="text-yellow-400">Development</span>
-          <br />
-          by Doing <span className="text-yellow-400">Development</span>
-        </h1>
-        <div className="flex gap-4 mt-10">
-          <Link
-            to="/programs"
-            className="bg-white text-black px-6 py-3 rounded-full font-medium hover:scale-105 transition"
-          >
-            Explore Programs
-          </Link>
-          <Link
-            to="/career-guidance"
-            className="bg-yellow-400 text-black px-6 py-3 rounded-full font-medium hover:scale-105 transition"
-          >
-            Get Career Guidance
-          </Link>
+    <>
+      <div className="w-full h-[80vh] overflow-hidden relative">
+        <img src={hero} alt="Hero" className="w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-black opacity-40 z-10"></div>
+        <div className="absolute top-[50%] left-[50%] z-20 transform -translate-x-1/2 -translate-y-1/2 text-center flex gap-6 flex-col justify-center items-center w-full font-PlayFair lg:max-w-3xl">
+          <h1 className="text-white text-4xl font-bold md:text-5xl lg:text-6xl">
+            Home Feels - Savor the Flavour
+          </h1>
+          <p className="text-white text-lg md:text-xl lg:text-3xl">
+            Discover delectable cuisine and unforgettable moments in our
+            welcoming, culinary haven
+          </p>
+          <div className="flex gap-4 flex-col md:flex-row">
+            <button className="px-6 py-3 bg-green-600 text-white rounded-full hover:bg-green-700 transition duration-300 flex items-center justify-center gap-2 cursor-pointer border font-DMSans">
+              Book a Table
+            </button>
+            <button className="px-6 py-3 border text-white rounded-full hover:bg-green-600 hover:text-white transition duration-300 font-DMSans flex items-center justify-center gap-2 cursor-pointer">
+              Explore Menu 
+            </button>
+          </div>
         </div>
       </div>
-
-      {/* Gradient Shadows
-      <div className="absolute inset-0 w-3/5 bg-gradient-to-r from-black/70 to-transparent pointer-events-none"></div>
-      <div className="absolute inset-0 w-3/5 bg-gradient-to-l from-black/70 to-transparent pointer-events-none right-0"></div> */}
-
-      {/* Navigation Dots */}
-      <div className="absolute bottom-5 left-1/2 transform -translate-x-1/2 flex space-x-2 z-20">
-        {slides.map((_, index) => (
-          <div
-            key={index}
-            className={`w-3 h-3 rounded-full cursor-pointer transition-opacity ${
-              index === currentSlide
-                ? "bg-white opacity-100"
-                : "bg-white opacity-50"
-            }`}
-            onClick={() => setCurrentSlide(index)}
-          ></div>
-        ))}
-      </div>
-    </div>
+    </>
   );
 };
 

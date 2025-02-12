@@ -1,203 +1,96 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import menu_icon from "../images/menu_icon.png";
+import dropdown_icon from "../images/dropdown_icon.png";
+import logo from "../images/restaurant.png";
 import { Link } from "gatsby";
-import { StaticImage } from "gatsby-plugin-image";
+import React from "react"
+
 
 const Navbar = () => {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const [isDiscoverDropdownOpen, setIsDiscoverDropdownOpen] = useState(false);
+  const [navActive, setNavActive] = useState(false);
 
+  const handleNavbar = () => {
+    setNavActive(!navActive);
+  };
   return (
-    <nav className="bg-white shadow-md fixed w-full top-0 z-50">
-      <div className="container mx-auto flex justify-between items-center py-3 px-4">
-        {/* Logo */}
-        <Link to="/" className="text-black font-bold text-xl">
-          <div className="">
-            <StaticImage
-              src="../images/techpathshala.svg"
-              className="w-full h-full"
+    <>
+      <div className="flex justify-between items-center gap-4 py-4 px-3 sm:px-[5vw] lg:px-[9vw]">
+        <div className="-mt-2">
+          <Link to="/">
+            <div className="flex gap-3 items-center justify-center">
+              <img src={logo} alt="" className="w-10 lg:w-12" />
+              <div className="text-center pt-[8px] lg:pt-[10px]">
+                <p className="text-2xl lg:text-3xl font-Francois text-black">
+                  HOME FEELS
+                </p>
+              </div>
+            </div>
+          </Link>
+        </div>
+
+        <div className="hidden md:flex gap-4 uppercase font-medium text-[#2A2A2A] text-base font-DMSans">
+          <Link to="/">
+            <p>Home</p>
+            <hr className="w-6/12 mx-auto h-[3px] bg-[#303030] hidden " />
+          </Link>
+          <Link to="/about">
+            <p>About</p>
+            <hr className="w-6/12 mx-auto h-[3px] bg-[#303030] hidden" />
+          </Link>
+          <Link to="/menu">
+            <p>Menu</p>
+            <hr className="w-6/12 mx-auto h-[3px] bg-[#303030] hidden" />
+          </Link>
+          <Link to="/contact">
+            <p>Contact</p>
+            <hr className="w-6/12 mx-auto h-[3px] bg-[#303030] hidden" />
+          </Link>
+        </div>
+
+        <div className="flex gap-4 justify-center items-center">
+          <Link to="/table-booking">
+            <button className="px-6 py-3 border text-black rounded-full hover:bg-green-600 hover:text-white transition duration-300 font-DMSans cursor-pointer">
+              Book a Table
+            </button>
+          </Link>
+          <div className="md:hidden">
+            <img
+              src={menu_icon}
+              alt=""
+              className="w-[18px] h-[18px] cursor-pointer"
+              onClick={handleNavbar}
             />
           </div>
-        </Link>
-
-        {/* Mobile Menu Toggle */}
-        <button
-          className="lg:hidden text-3xl"
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-        >
-          ☰
-        </button>
-
-        {/* Desktop Menu */}
-        <ul className="hidden lg:flex space-x-6 items-center">
-          <li>
-            <Link to="/about" className="hover:text-yellow-500">
-              About Us
-            </Link>
-          </li>
-          <li className="relative">
-            <button
-              onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-              className="hover:text-yellow-500 flex items-center"
-            >
-              Our Programs ▾
-            </button>
-            {isDropdownOpen && (
-              <ul className="absolute left-0 top-full mt-2 w-52 bg-white border border-gray-300 rounded shadow-lg overflow-hidden">
-                <li>
-                  <Link
-                    to="/fullstack"
-                    className="block px-4 py-2 hover:bg-yellow-500"
-                  >
-                    Advanced Full Stack
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/backend"
-                    className="block px-4 py-2 hover:bg-yellow-500"
-                  >
-                    Back-end Development
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/frontend"
-                    className="block px-4 py-2 hover:bg-yellow-500"
-                  >
-                    Front-end Development
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/datascience"
-                    className="block px-4 py-2 hover:bg-yellow-500"
-                  >
-                    Data Science
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/dataanalytics"
-                    className="block px-4 py-2 hover:bg-yellow-500"
-                  >
-                    Data Analytics
-                  </Link>
-                </li>
-              </ul>
-            )}
-          </li>
-          <li className="relative">
-            <button
-              onClick={() => setIsDiscoverDropdownOpen(!isDiscoverDropdownOpen)}
-              className="hover:text-yellow-500 flex items-center"
-            >
-              Discover ▾
-            </button>
-            {isDiscoverDropdownOpen && (
-              <ul className="absolute left-0 top-full mt-2 w-32 bg-white border border-gray-300 rounded shadow-lg overflow-hidden">
-                <li>
-                  <Link
-                    to="/fullstack"
-                    className="block px-4 py-2 hover:bg-yellow-500"
-                  >
-                    About us
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/frontend"
-                    className="block px-4 py-2 hover:bg-yellow-500"
-                  >
-                    Blog
-                  </Link>
-                </li>
-              </ul>
-            )}
-          </li>
-          <li>
-            <Link to="/contact-us" className="hover:text-yellow-500">
-              Contact Us
-            </Link>
-          </li>
-          <li>
-            <button className="bg-yellow-500 text-black px-4 py-2 rounded-full">
-              Get Career Guidance
-            </button>
-          </li>
-        </ul>
-      </div>
-
-      {/* Mobile Menu */}
-      {isMobileMenuOpen && (
-        <div className="lg:hidden absolute w-full bg-white shadow-md">
-          <ul className="flex flex-col space-y-2 p-4">
-            <li>
-              <Link to="/about" className="block py-2">
-                About Us
-              </Link>
-            </li>
-            <li className="relative">
-              <button
-                onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                className="flex items-center justify-between w-full py-2"
-              >
-                Our Programs ▾
-              </button>
-              {isDropdownOpen && (
-                <ul className="pl-4">
-                  <li>
-                    <Link to="/fullstack" className="block py-1">
-                      Advanced Full Stack
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="/backend" className="block py-1">
-                      Back-end Development
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="/frontend" className="block py-1">
-                      Front-end Development
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="/datascience" className="block py-1">
-                      Data Science
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="/dataanalytics" className="block py-1">
-                      Data Analytics
-                    </Link>
-                  </li>
-                </ul>
-              )}
-            </li>
-            <li>
-              <Link to="/enquire" className="block py-2">
-                Hire From Us
-              </Link>
-            </li>
-            <li>
-              <Link to="/blog" className="block py-2">
-                Blog
-              </Link>
-            </li>
-            <li>
-              <Link to="/contact-us" className="block py-2">
-                Contact Us
-              </Link>
-            </li>
-            <li>
-              <button className="w-full bg-yellow-500 text-black px-4 py-2 rounded-full">
-                Get Career Guidance
-              </button>
-            </li>
-          </ul>
         </div>
-      )}
-    </nav>
+      </div>
+      <div>
+        {navActive && (
+          <div className="fixed top-0 left-0 bottom-0 w-full h-full bg-white md:hidden z-40">
+            <div
+              className="flex items-center cursor-pointer gap-2 px-2 py-2"
+              onClick={handleNavbar}
+            >
+              <img src={dropdown_icon} alt="" className="w-3" />
+              <p className="text-[20px]">Back</p>
+            </div>
+            <div className="flex flex-col px-0 font-DMSans">
+              <Link to="/" onClick={() => setNavActive(false)}>
+                <p className="border-2 border-b-0 p-2">Home</p>
+              </Link>
+              <Link to="/about" onClick={() => setNavActive(false)}>
+                <p className="border-2 border-b-0 p-2">About</p>
+              </Link>
+              <Link to="/menu" onClick={() => setNavActive(false)}>
+                <p className="border-2 border-b-0 p-2">Menu</p>
+              </Link>
+              <Link to="/contact" onClick={() => setNavActive(false)}>
+                <p className="border-2 border-b-2 p-2">Contact</p>
+              </Link>
+            </div>
+          </div>
+        )}
+      </div>
+    </>
   );
 };
 
